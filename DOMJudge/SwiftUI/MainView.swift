@@ -15,16 +15,13 @@ struct MainView: View {
         
         Text("Hello, World!")
         
-        NavigationStack {
-            TabView{
-                Tab("Home", systemImage: "house"){
-                    MainView()
-                }
-                Tab("Account", systemImage: "person"){
-                    AccountView()
-                }
+        TabView{
+            Tab("Home", systemImage: "house"){
+                //MainView()
             }
-            
+            Tab("Account", systemImage: "person"){
+                //AccountView()
+            }
         }
     }
 }
