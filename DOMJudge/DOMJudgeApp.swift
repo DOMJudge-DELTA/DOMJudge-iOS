@@ -15,3 +15,7 @@ struct DOMJudgeApp: App {
         }
     }
 }
+
+#Preview{
+    ContentView()
+}
