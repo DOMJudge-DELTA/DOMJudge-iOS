@@ -11,11 +11,11 @@ import SwiftUI
 struct DOMJudgeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
 
 #Preview{
-    ContentView()
+    MainView()
 }
