@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var isDarkMode: Bool?
+    var users: [String: User]
+    
     var body: some View {
-        Image(systemName: "globe")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
-        
-        Text("Hello, World!")
-        
         TabView{
-            Tab("Home", systemImage: "house"){
-                //MainView()
+            Tab("Home", systemImage: "house") {
+                HelloWorldView()
             }
-            Tab("Account", systemImage: "person"){
-                //AccountView()
+            Tab("Account", systemImage: "person") {
+                AccountView()
+            }
+            Tab("Settings", systemImage: "gear") {
+                SettingsView(isDarkMode: $isDarkMode)
             }
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(isDarkMode: .constant(true), users: [:])
 }
 

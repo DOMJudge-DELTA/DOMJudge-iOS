@@ -14,18 +14,6 @@ struct AccountView: View {
             .foregroundStyle(.tint)
         
         Text("Account")
-        
-        TabView {
-            Tab("Home", systemImage: "house") {
-                MainView()
-            }
-            Tab("Account", systemImage: "person") {
-                AccountView()
-            }
-            Tab("Settings", systemImage: "gear") {
-                SettingsView()
-            }
-        }
     }
 }
 

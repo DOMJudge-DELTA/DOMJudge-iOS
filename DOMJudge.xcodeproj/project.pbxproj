@@ -45,6 +45,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		120B58612C930676002B46CC /* swift */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = swift; sourceTree = "<group>"; };
 		12F2D6652C922130002331CB /* SwiftUI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftUI; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -96,6 +97,7 @@
 		1257AA472C919BA800B31C72 /* DOMJudge */ = {
 			isa = PBXGroup;
 			children = (
+				120B58612C930676002B46CC /* swift */,
 				1257AA482C919BA800B31C72 /* DOMJudgeApp.swift */,
 				12F2D6652C922130002331CB /* SwiftUI */,
 				1257AA4C2C919BAA00B31C72 /* Assets.xcassets */,
@@ -145,6 +147,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				120B58612C930676002B46CC /* swift */,
 				12F2D6652C922130002331CB /* SwiftUI */,
 			);
 			name = DOMJudge;
@@ -352,7 +355,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				ITSAppUsesNonExemptEncryption = YES;
+				ITSAppUsesNonExemptEncryption = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -410,7 +413,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				ITSAppUsesNonExemptEncryption = YES;
+				ITSAppUsesNonExemptEncryption = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
