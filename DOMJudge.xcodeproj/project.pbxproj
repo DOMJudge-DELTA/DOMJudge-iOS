@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1257AA492C919BA800B31C72 /* DOMJudgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257AA482C919BA800B31C72 /* DOMJudgeApp.swift */; };
-		1257AA4B2C919BA800B31C72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257AA4A2C919BA800B31C72 /* ContentView.swift */; };
 		1257AA4D2C919BAA00B31C72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1257AA4C2C919BAA00B31C72 /* Assets.xcassets */; };
 		1257AA502C919BAA00B31C72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1257AA4F2C919BAA00B31C72 /* Preview Assets.xcassets */; };
 		1257AA5A2C919BAA00B31C72 /* DOMJudgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257AA592C919BAA00B31C72 /* DOMJudgeTests.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		1257AA452C919BA800B31C72 /* DOMJudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOMJudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1257AA482C919BA800B31C72 /* DOMJudgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMJudgeApp.swift; sourceTree = "<group>"; };
-		1257AA4A2C919BA800B31C72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1257AA4C2C919BAA00B31C72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1257AA4F2C919BAA00B31C72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1257AA552C919BAA00B31C72 /* DOMJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOMJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +43,11 @@
 		1257AA632C919BAA00B31C72 /* DOMJudgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMJudgeUITests.swift; sourceTree = "<group>"; };
 		1257AA652C919BAA00B31C72 /* DOMJudgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOMJudgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		120B58612C930676002B46CC /* swift */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = swift; sourceTree = "<group>"; };
+		12F2D6652C922130002331CB /* SwiftUI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftUI; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1257AA422C919BA800B31C72 /* Frameworks */ = {
@@ -94,8 +97,9 @@
 		1257AA472C919BA800B31C72 /* DOMJudge */ = {
 			isa = PBXGroup;
 			children = (
+				120B58612C930676002B46CC /* swift */,
 				1257AA482C919BA800B31C72 /* DOMJudgeApp.swift */,
-				1257AA4A2C919BA800B31C72 /* ContentView.swift */,
+				12F2D6652C922130002331CB /* SwiftUI */,
 				1257AA4C2C919BAA00B31C72 /* Assets.xcassets */,
 				1257AA4E2C919BAA00B31C72 /* Preview Content */,
 			);
@@ -141,6 +145,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				120B58612C930676002B46CC /* swift */,
+				12F2D6652C922130002331CB /* SwiftUI */,
 			);
 			name = DOMJudge;
 			productName = DOMJudge;
@@ -257,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1257AA4B2C919BA800B31C72 /* ContentView.swift in Sources */,
 				1257AA492C919BA800B31C72 /* DOMJudgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +355,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				ITSAppUsesNonExemptEncryption = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -405,6 +413,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				ITSAppUsesNonExemptEncryption = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
