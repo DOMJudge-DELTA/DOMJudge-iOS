@@ -29,29 +29,6 @@ struct SettingsView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())  // You can also use .menu or .wheel if you prefer
             }
-
-            Section(header: Text("Account")) {
-                HStack {
-                    Text("Username")
-                    Spacer()
-                    Text("jan.drobilek")  // Replace with dynamic user data
-                }
-                HStack {
-                    Text("Email")
-                    Spacer()
-                    Text("delta.skola.vyvoj@gmail.com").foregroundColor(.blue)  // Replace with dynamic user data
-                }
-                
-                Button(action: {
-                    // Sign out logic here
-                }) {
-                    HStack {
-                        Image(systemName: "person.fill.xmark")
-                        Text("Sign Out")
-                            .foregroundColor(.red)
-                    }
-                }
-            }
         }
         .navigationTitle("Settings")
     }

@@ -1,89 +1,73 @@
-//
-//  LoginView.swift
-//  DOMJudge
-//
-//  Created by Jan Drobílek on 12.09.2024.
-//
-
 import SwiftUI
 
-struct SecureInputView: View {
+struct LoginView: View {
+    @Binding var showLoginPopup: Bool  // Controls the visibility of the login modal
+    @Binding var loggedInUser: User?
     
-    @Binding private var text: String
-    @State private var isSecured: Bool = true
-    private var title: String
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var loginError: String?
     
-    init(_ title: String, text: Binding<String>) {
-        self.title = title
-        self._text = text
-    }
+    @State private var showSignUpPopup: Bool = false  // Controls the visibility of the sign-up modal
+    @Binding var users: [String: User]  // Pass the users dictionary
     
     var body: some View {
-        ZStack(alignment: .trailing) {
-            Group {
-                if isSecured {
-                    SecureField(title, text: $text)
-                } else {
-                    TextField(title, text: $text)
-                }
-            }.padding(.trailing, 32)
+        VStack {
+            Text("Login")
+                .font(.largeTitle)
+                .padding()
+
+            TextField("Username", text: $username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            SecureField("Password", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            if let error = loginError {
+                Text(error)
+                    .foregroundColor(.red)
+                    .padding()
+            }
 
             Button(action: {
-                isSecured.toggle()
+                handleLogin()
             }) {
-                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                    .accentColor(.gray)
-            }
-        }
-    }
-}
-
-
-
-// Custom placeholder modifier for TextField
-extension View {
-    func placeholder<Content: View>(
-        when shouldShow: Bool,
-        alignment: Alignment = .leading,
-        @ViewBuilder placeholder: () -> Content
-    ) -> some View {
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
-        }
-    }
-}
-
-
-
-
-struct LoginView: View {
-    var user : User = User(id: UUID(), username: "", password: "", email: "")
-    
-    var body: some View {
-        List{
-            HStack {
-                TextField("Email", text: .constant(user.email))
-                    .placeholder(when: user.email.isEmpty) {
-                                    Text("example@example.com").foregroundColor(.gray)
-                                }
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .foregroundColor(Color.black)  // Regular text color
-                                .keyboardType(.default)  // Avoid using .emailAddress to prevent highlighting
-                                .autocapitalization(.none)
-                                .disableAutocorrection(true)
-                                .padding()
-            }
-            HStack {
-                SecureInputView("Password", text: .constant(user.password))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("Login")
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                     .padding()
             }
             
+            // Add a sign-up button
+            Button(action: {
+                showSignUpPopup = true  // Open sign-up modal
+            }) {
+                Text("Don't have an account? Sign Up")
+                    .foregroundColor(.blue)
+                    .padding()
+            }
+        }
+        .padding()
+        .sheet(isPresented: $showSignUpPopup) {
+            // Pass the necessary bindings to SignUpView, including the login modal binding
+            SignUpView(showSignUpPopup: $showSignUpPopup, showLoginPopup: $showLoginPopup, loggedInUser: $loggedInUser, users: users, updateUsers: $users)
         }
     }
-}
 
-#Preview {
-    LoginView()
+    func handleLogin() {
+        // Existing login logic
+        if let user = users[username], user.Login(password: password) {
+            loggedInUser = user
+            UserDefaults.standard.saveLoggedInUser(user)
+            showLoginPopup = false  // Close login modal after successful login
+        } else {
+            loginError = "Invalid username or password"
+        }
+    }
 }

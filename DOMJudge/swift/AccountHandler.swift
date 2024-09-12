@@ -55,4 +55,25 @@ extension UserDefaults {
         }
         return nil
     }
+    
+    func saveLoggedInUser(_ user: User) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(user) {
+            self.set(encoded, forKey: "loggedInUser")
+        }
+    }
+    
+    func loadLoggedInUser() -> User? {
+        if let savedUserData = self.data(forKey: "loggedInUser") {
+            let decoder = JSONDecoder()
+            if let loadedUser = try? decoder.decode(User.self, from: savedUserData) {
+                return loadedUser
+            }
+        }
+        return nil
+    }
+    
+    func removeLoggedInUser() {
+        self.removeObject(forKey: "loggedInUser")
+    }
 }
