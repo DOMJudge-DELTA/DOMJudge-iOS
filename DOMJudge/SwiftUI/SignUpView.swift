@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct SignUpView: View {
     @Binding var showSignUpPopup: Bool  // Controls the visibility of the sign-up modal
     @Binding var showLoginPopup: Bool  // Controls the visibility of the login modal (passed from LoginView)
